@@ -1,119 +1,116 @@
-# 🚨 Smart IoT Gas Leakage Detection System
+🚨 IoT-Based Smart Gas Monitoring & Emergency Alert System
 
-**Embedded Firmware + Real-Time WhatsApp/SMS Alerts using Twilio**
+A compact embedded + cloud IoT solution that detects hazardous gas leaks using MQ-2, triggers local alarms, and instantly sends remote alerts through WhatsApp/SMS using a Node.js server integrated with Twilio.
 
-A complete IoT safety solution using an MQ-2 gas sensor, Arduino-based embedded firmware, UART communication, and a Node.js backend that sends WhatsApp/SMS alerts through Twilio during hazardous gas conditions.
+This system demonstrates end-to-end embedded engineering, from sensor-level firmware to cloud communication and real-time monitoring.
 
----
+🔍 Project Summary
 
-## 📌 Overview
+This device keeps track of combustible gas levels in real time.
+When readings cross predefined safety limits:
 
-This project continuously monitors gas levels, triggers local alerts through buzzer/LED, and sends remote emergency alerts through a cloud-based backend.
+The buzzer + LED activate on-device
 
-Designed as a **real-world embedded IoT application**, it showcases firmware development, sensor interfacing, communication protocols, and cloud integration.
+Gas data is sent to a backend server via UART
 
----
+Twilio API pushes WhatsApp/SMS alerts for emergencies
 
-# 🧱 System Architecture (Add Your PNG Here)
+A live dashboard reflects updated gas levels in real-time
 
-🔽 **Add your exported architecture diagram (architecture.png) below**
+Ideal for home safety, laboratories, hostels, chemical storage, and industrial setups.
 
-![System Architecture](docs/architecture.png)
+🧩 System Workflow
 
----
+You can replace the above example image with your own architecture.png later.
 
-# 🔌 Circuit Diagram (Add Your PNG Here)
+🔧 Circuit Reference
 
-🔽 **Add your circuit diagram (circuit.png) below**
+Add your own circuit.png in the repo.
 
-![Circuit Diagram](docs/circuit.png)
+🌟 Key Features
 
----
+Continuous gas sensing using MQ-2
 
-# ⭐ Features
+Arduino-based embedded firmware (C/C++)
 
-- Real-time gas monitoring
-- Embedded firmware using **C/C++**
-- Threshold-based buzzer & LED alerts
-- UART serial communication (Arduino → Backend)
-- WhatsApp/SMS alerts using Twilio Messaging API
-- Live dashboard using Server-Sent Events (SSE)
-- Complete end-to-end IoT + Embedded workflow
+Safety alerts via buzzer & LED
 
----
+UART serial communication with backend
 
-# 🧰 Tech Stack
+WhatsApp/SMS emergency alert automation (Twilio)
 
-### **Embedded / Firmware**
+Real-time dashboard using Server-Sent Events
 
-- Arduino UNO
-- MQ-2 Gas Sensor
-- Buzzer / LED
-- ADC, GPIO, UART
-- C/C++ Firmware
+Simple, modular folder structure suitable for resume projects
 
-### **Backend / Cloud**
+🛠️ Technology Stack
+Hardware / Embedded
 
-- Node.js
-- Express.js
-- Twilio API (WhatsApp/SMS)
-- SerialPort Library
-- SSE (Real-Time Updates)
+Arduino Uno
 
----
+MQ-2 Gas Sensor
 
-# 📂 Folder Structure
+Buzzer + Indicator LED
 
-```
-iot-gas-detection-embedded-system/
+Analog-to-Digital Conversion
+
+UART serial communication
+
+C/C++ Firmware
+
+Backend Services
+
+Node.js + Express
+
+Twilio Messaging APIs
+
+SerialPort library
+
+SSE (Live updates to client)
+
+📁 Project Directory Layout
+smart-gas-alert-system/
+│
+├── firmware/
+│   └── gas_monitor.ino
 │
 ├── backend/
 │   ├── server.js
 │   ├── .env
 │   └── public/
 │
-├── firmware/
-│   └── gas_firmware.ino
-│
 ├── docs/
 │   ├── architecture.png
 │   ├── circuit.png
-│   └── report.pdf
+│   └── project-report.pdf
 │
 ├── .gitignore
 └── README.md
-```
 
----
+🚀 Operational Flow (Simple Explanation)
 
-# 📡 How It Works (High-Level)
+MQ-2 measures gas concentration every few milliseconds
 
-1. MQ-2 sensor reads gas concentration
-2. Embedded firmware processes analog readings
-3. If threshold exceeded → buzzer & LED activate
-4. Arduino sends gas values via UART
-5. Node.js backend parses data
-6. If DANGER → Twilio sends WhatsApp/SMS alert
-7. Live dashboard updates via SSE
+The microcontroller reads analog values and compares them with thresholds
 
----
+If the value enters Warning or Danger, local alarm activates
 
-# 🧪 Gas Levels
+Arduino sends data to the backend through UART
 
-| Gas Reading | Status     | Description                       |
-| ----------- | ---------- | --------------------------------- |
-| 0–200       | SAFE 🟢    | Normal conditions                 |
-| 201–350     | WARNING 🟡 | Elevated gas detected             |
-| 351+        | DANGER 🔴  | Hazardous level, alerts triggered |
+Backend evaluates risk and sends WhatsApp/SMS alerts using Twilio
 
----
+Dashboard displays real-time sensor readings via SSE
 
-# 👨‍💻 Author
+📊 Gas Level Interpretation
+Range	State	Meaning
+0–200	🟢 Normal	Safe environment
+201–350	🟡 Caution	Slight increase detected
+351+	🔴 Critical	High risk → Alerts triggered
+👤 Created By
 
-**Dwiden Brahma (NIT Warangal)**  
+Yash Paunikar (NIT Warangal)
+Embedded Systems + IoT Enthusiast
 
----
+🙏 Thanks for Checking Out This Project!
 
-# 🎉 Thank You for Viewing This Project!
-
-Feel free to open issues or contribute.
+If you plan to extend or optimize this system, feel free to fork the repo and experiment.
