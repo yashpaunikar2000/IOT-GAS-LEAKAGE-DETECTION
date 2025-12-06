@@ -1,0 +1,20 @@
+{
+  "name": "gas-monitoring-system",
+  "version": "1.0.0",
+  "description": "Gas monitoring system with integration twilio sms service",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "serialport": "^13.0.0",
+    "socket.io": "^4.8.1",
+    "twilio": "^5.10.3"
+  }
+}
